@@ -38,34 +38,24 @@
     }
 
     .main-title {
-        display: block;
+        display: inline;
         font-family: 'Noto Sans KR', sans-serif;
         font-size: 30px;
         font-weight: 700;
         color: #7c7c7c;
-        margin-bottom: 70px;
         border-bottom: 3px solid #7c7c7c;
         border-top: 3px solid #7c7c7c;
-        width: 30rem;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 30vh;
     }
 
     .sub-title {
-        display: block;
+        display: inline;
+        font-family: 'Noto Sans KR', sans-serif;
         font-size: 1.5rem;
         font-weight: 500;
         color: #ebebeb;
         margin-bottom: 20vh;
         align-content: center;
         line-height: 40px;
-        -webkit-text-size-adjust: 100%;
-        -moz-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-        width: 30rem;
-        margin-left: auto;
-        margin-right: auto; 
     }
 
     .updown-slash {
@@ -80,28 +70,18 @@
     }
 
     #start-button{
-        display: block;
+        display: inline;
         font-size: 1.2rem;
         color:#ff9300;
         background-color: #1f1f1f;
         border: 0.2rem solid #ff9300;
-        width: 30rem;
-        height: 3rem;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 60px;
     }
 
     #start-button:hover{
-        display: block;
+        display: inline;
         font-size:  1.2rem;
         color:#1f1f1f;
         background-color: #ff9300;
-        width: 30rem;
-        height: 3rem;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 60px;
     }
 
     .btn-start, .btn-start:visited, .btn-start:hover, .btn-start:active {
@@ -247,22 +227,21 @@
 
     /*SNS 공유*/
 
-   .sns-go {
+    .sns-go {
         display: block;
         margin: 0;
     }
 
     .sns-go li {
         display:inline-block; 
-        margin: 0 5px; 
+        margin: 0 5px;
     }
 
     .sns-go li img {
         border-radius:10px;
-
     }
 
-     ul{
+    ul{
         padding: 0;
         margin-bottom: 30vh;
     }

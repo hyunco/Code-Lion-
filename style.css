@@ -26,7 +26,7 @@
     }
 
     .copyright-text {
-        font-family: "Noto Sans KR";
+        font-family: "Noto Sans KR", sans-serif;
         font-size: 12px;
         color: #7c7c7c;
     }
@@ -38,7 +38,7 @@
     }
 
     .main-title {
-        margin: 0;
+        display: block;
         font-family: 'Noto Sans KR', sans-serif;
         font-size: 30px;
         font-weight: 700;
@@ -46,20 +46,26 @@
         margin-bottom: 70px;
         border-bottom: 3px solid #7c7c7c;
         border-top: 3px solid #7c7c7c;
-        display: block;
         width: 30rem;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 200px;
-        
+        margin-bottom: 30vh;
     }
 
     .sub-title {
-        font-size: 1.7rem;
+        display: block;
+        font-size: 1.5rem;
         font-weight: 500;
         color: #ebebeb;
-        margin-bottom: 170px;
+        margin-bottom: 20vh;
         align-content: center;
+        line-height: 40px;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        width: 30rem;
+        margin-left: auto;
+        margin-right: auto; 
     }
 
     .updown-slash {
@@ -75,12 +81,12 @@
 
     #start-button{
         display: block;
-        font-size: 16px;
+        font-size: 1.2rem;
         color:#ff9300;
         background-color: #1f1f1f;
-        border:3px solid #ff9300;
+        border: 0.2rem solid #ff9300;
         width: 30rem;
-        height: 50px;
+        height: 3rem;
         margin-left: auto;
         margin-right: auto;
         margin-top: 60px;
@@ -88,11 +94,11 @@
 
     #start-button:hover{
         display: block;
-        font-size: 16px;
+        font-size:  1.2rem;
         color:#1f1f1f;
         background-color: #ff9300;
-        width: 500px;
-        height: 50px;
+        width: 30rem;
+        height: 3rem;
         margin-left: auto;
         margin-right: auto;
         margin-top: 60px;
@@ -168,9 +174,13 @@
 
     .result-message {
         color: #ff9300;
-        margin: 0 auto;
-        font-size: 24px;
+        margin: auto auto;
+        font-size: 1.1rem;
         font-weight: 100;
+        width: 100vh;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
     }
 
     .result-animal {
@@ -178,24 +188,26 @@
         font-size: 2rem;
         font-weight: 500;
         color: #ebebeb;
+  
     }
 
     .result-explain{
-        display: block;
+        display: flex;
+        flex-direction: column;
         font-size: 1.1rem;
         font-weight: normal;
         color: #ff9300;
         font-family: 'Noto Sans KR', sans-serif;
         font-weight: normal;
-        width: 100vh;
         line-height: 30px;
-        margin-left: auto;
-        margin-right: auto;
+        align-content: center;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
     }
 
     .share-message {
         font-family: 'Noto Sans KR', sans-serif;
-        margin: 0 auto;
         color:#ffffff;
         font-size: 24px;
         font-weight: 400;
@@ -237,9 +249,9 @@
 
     .sns-go {
         display: block;
-        margin-left: auto;
-        margin-right: 55vh;
         padding: 20px 0;
+        width: 100vh;
+        margin: auto auto;
     }
 
     .sns-go li {

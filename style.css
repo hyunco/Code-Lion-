@@ -47,18 +47,18 @@
         border-bottom: 3px solid #7c7c7c;
         border-top: 3px solid #7c7c7c;
         display: block;
-        width: 500px;
+        width: 30rem;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 150px;
+        margin-bottom: 200px;
         
     }
 
     .sub-title {
-        font-size: 24px;
+        font-size: 1.7rem;
         font-weight: 500;
         color: #ebebeb;
-        margin-bottom: 100px;
+        margin-bottom: 170px;
         align-content: center;
     }
 
@@ -79,7 +79,7 @@
         color:#ff9300;
         background-color: #1f1f1f;
         border:3px solid #ff9300;
-        width: 500px;
+        width: 30rem;
         height: 50px;
         margin-left: auto;
         margin-right: auto;
@@ -119,7 +119,7 @@
         border:#1f1f1f;
         width: 288px;
         margin: 0 auto;
-        font-size: 13px;
+        font-size: 1.1rem;
         color: #ffffff;
     }
 
@@ -128,7 +128,7 @@
         border:#1f1f1f !important;
         width: 288px;
         margin: 0 auto;
-        font-size: 13px;
+        font-size: 1.1rem;
         color: #ffffff;
     }
 
@@ -147,7 +147,7 @@
     }
 
     .question-content {
-        font-size: 14px;
+        font-size: 1.2rem;
         color: #ff9300;
     }
 
@@ -175,19 +175,19 @@
 
     .result-animal {
         font-family: 'Noto Sans KR', sans-serif;
-        font-size: 30px;
-        font-weight: 400;
+        font-size: 2rem;
+        font-weight: 500;
         color: #ebebeb;
     }
 
     .result-explain{
         display: block;
-        font-size: 14px;
+        font-size: 1.1rem;
         font-weight: normal;
         color: #ff9300;
         font-family: 'Noto Sans KR', sans-serif;
-        font-weight: 300;
-        width: 300px;
+        font-weight: normal;
+        width: 100vh;
         line-height: 30px;
         margin-left: auto;
         margin-right: auto;
@@ -199,12 +199,6 @@
         color:#ffffff;
         font-size: 24px;
         font-weight: 400;
-    }
-
-    .sns-go{
-        display: block;
-        margin-left: auto;
-        margin-right: 400px;
     }
 
     .result {
@@ -242,9 +236,10 @@
     /*SNS 공유*/
 
     .sns-go {
-        text-align:center; 
+        display: block;
+        margin-left: auto;
+        margin-right: 55vh;
         padding: 20px 0;
-        align-items: center;
     }
 
     .sns-go li {

@@ -247,11 +247,9 @@
 
     /*SNS 공유*/
 
-    .sns-go {
+   .sns-go {
         display: block;
-        padding: 20px 0;
-        width: 100vh;
-        margin: auto auto;
+        margin: 0;
     }
 
     .sns-go li {
@@ -262,4 +260,9 @@
     .sns-go li img {
         border-radius:10px;
 
+    }
+
+     ul{
+        padding: 0;
+        margin-bottom: 30vh;
     }

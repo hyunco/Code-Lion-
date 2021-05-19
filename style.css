@@ -8,14 +8,6 @@
     font-family: 'Noto Sans KR', sans-serif;
     }
 
-    #img{
-        width: 300px;
-        height: 300px;
-        margin: 0 auto;
-        align-items: center;
-        text-align: center;
-    }
-
     article {
         display: flex;
         flex-direction: column;
@@ -33,34 +25,40 @@
     
     /* 시작화면 */
 
+
+    .start{
+        width: 400px;
+        margin: 0 auto;
+    }
+
     .question {
         display: none;
     }
 
     .main-title {
-        display: inline;
         font-family: 'Noto Sans KR', sans-serif;
         font-size: 30px;
         font-weight: 700;
         color: #7c7c7c;
         border-bottom: 3px solid #7c7c7c;
         border-top: 3px solid #7c7c7c;
-    }
-
-    .sub-title {
-        display: inline;
-        font-family: 'Noto Sans KR', sans-serif;
-        font-size: 1.5rem;
-        font-weight: 500;
-        color: #ebebeb;
-        margin-bottom: 20vh;
-        align-content: center;
-        line-height: 40px;
+        padding: 3vh;
+        margin-bottom: 120px;
     }
 
     .updown-slash {
         width: 166px;
         margin: 0 auto;
+    }
+
+    .sub-title {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        color: #ebebeb;
+        line-height: 40px;
+        width: 100%;
+        margin-bottom: 120px;
     }
 
     .start-cover {
@@ -69,22 +67,16 @@
         align-items: center;
     }
 
-    #start-button{
-        display: inline;
-        font-size: 1.2rem;
+    .btn-start {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 16px;
         color:#ff9300;
         background-color: #1f1f1f;
-        border: 0.2rem solid #ff9300;
+        border:#1f1f1f;
     }
 
-    #start-button:hover{
-        display: inline;
-        font-size:  1.2rem;
-        color:#1f1f1f;
-        background-color: #ff9300;
-    }
-
-    .btn-start, .btn-start:visited, .btn-start:hover, .btn-start:active {
+    .btn-start, .btn-start:visited, .btn-start:active {
+        font-family: 'Noto Sans KR', sans-serif;
         font-size: 16px;
         color:#ff9300;
         background-color: #1f1f1f;
@@ -92,11 +84,19 @@
     }
 
     .btn-start:active, .btn-start:focus {
+        font-family: 'Noto Sans KR', sans-serif;
         background-color: #ff9300 !important;
         border:#1f1f1f !important;
         font-size: 16px;
         color:#ffffff;
     }
+
+    .btn-start:hover {
+        font-family: 'Noto Sans KR', sans-serif;
+        background-color: #ff9300;
+        color: #1f1f1f;
+    }
+
 
     /* 문제 화면 */
 
@@ -120,6 +120,7 @@
 
     .progress-bar {
         background-color: #ff9300;
+        width: 100vh;
     }
 
     .progress {
@@ -156,8 +157,8 @@
         color: #ff9300;
         margin: auto auto;
         font-size: 1.1rem;
-        font-weight: 100;
-        width: 100vh;
+        font-weight: 400;
+        margin: 0 auto;
         -webkit-text-size-adjust: 100%;
         -moz-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
@@ -174,8 +175,8 @@
     .result-explain{
         display: flex;
         flex-direction: column;
-        font-size: 1.1rem;
-        font-weight: normal;
+        font-size: 16px;
+        font-weight: 300;
         color: #ff9300;
         font-family: 'Noto Sans KR', sans-serif;
         font-weight: normal;
@@ -191,16 +192,21 @@
         color:#ffffff;
         font-size: 24px;
         font-weight: 400;
+        margin: 0 auto;
     }
 
     .result {
+        width: 400px;
+        margin: 0 auto;
         display: none;
     }
 
-    #img {
+    #img{
         width: 300px;
         height: 300px;
         margin: 0 auto;
+        align-items: center;
+        text-align: center;
     }
 
     .share {
@@ -245,3 +251,4 @@
         padding: 0;
         margin-bottom: 30vh;
     }
+

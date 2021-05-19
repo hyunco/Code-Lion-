@@ -10,29 +10,39 @@
     <link rel="stylesheet" href="style.css">
     <!-- jQuery -->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <!-- KakaoTalk Share Script -->
+    <!-- 폰트-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- 폰트-->
+     <!-- KakaoTalk Share Script -->
+     <script src="https://developers.kakao.com/sdk/js/kakao.min/js"></script>
+    <!-- Kakao talk script-->
+    <script type="text/javascript">
+        Kakao.init('5e758dd8876482ffabe379e630d7a7e8'); // 초기화
+        function sendLink() { // 카카오톡 공유하기
+          Kakao.Link.sendDefault({
+            objectType: 'text',
+            text: '기본 템플릿으로 제공되는 텍스트 템플릿은 텍스트를 최대 200자까지 표시할 수 있습니다. 텍스트 템플릿은 텍스트 영역과 하나의 기본 버튼을 가집니다. 임의의 버튼을 설정할 수도 있습니다. 여러 장의 이미지, 프로필 정보 등 보다 확장된 형태의 카카오링크는 다른 템플릿을 이용해 보낼 수 있습니다.',
+            link: {
+              mobileWebUrl: 'https://developers.kakao.com/docs/js/kakaotalklink#텍스트-템플릿-보내기',
+              webUrl: 'https://developers.kakao.com/docs/js/kakaotalklink#텍스트-템플릿-보내기',
+            },
+          })
+        }
+    </script>
+  <!-- instagram shere script-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<script>
-
-Kakao.init('카카오톡 API');
-
-function shareKatalk() {
-Kakao.Link.sendScrap({
-    requestUrl: location.href
-});
-};
-
-</script>
 </head>
 <body class="container">
     <!--시작화면-->
     <article class="start">
         <h1 class="main-title mt-5 text-center"> 나는 어떤 새와 어울릴까?</h1>
-        <h2 class="sub-title mt-3 text-center">일행과 낯선 곳을 여행 하다가 길을 잃었다! <br> 정체모를 새가 나에게 다가온다.</h2>
-        <button type="button" id="start-button" class="btn-start btn btn-primary" onclick='start();'>새와 함께 잃어버린 길 찾기</button>
+        <h2 class="sub-title mt-3 text-center">일행과 낯선 곳을 여행 하다가 <br> 길을 잃었다!</h2>
+        <img class="updown-slash mt-5" src="img/up-slash.png" alt="up-slash">
+        <div class="start-cover mt-3 mb-3">
+            <button type="button" id="start-button" class="btn-start btn btn-primary" onclick='start();'>잃어버린 길 찾기</button>
+        </div>
+        <img class="updown-slash" src="img/down-slash.png" alt="up-slash">
     </article>
 
     <!--문제화면-->
@@ -40,7 +50,9 @@ Kakao.Link.sendScrap({
         <div class="progress mt-5">
             <div class="progress-bar" role="progressbar" style="width: calc(100/12*1%)"></div>
         </div>
+        <img class="mt-5 slash-element" src="img/slash-element.png" alt="slash-element">
         <h2 id="title" class="question-content text-center mt-4 mb-4">문제</h2>
+        <img class="slash-element" src="img/slash-element.png" alt="slash-element">
         <input id="type" type="hidden" value="EI">
         <div class="rectangle mt-5"></div>
         <button id="A" type="button" class="btn-answer btn btn-primary pt-5 pb-5">대답A</button>
@@ -49,6 +61,9 @@ Kakao.Link.sendScrap({
         <div class="rectangle"></div>
     </article>
     <article class="result">
+        <img class="updown-slash mt-5" src="img/dark-slash.png" alt="dark-slash">
+        <span class="result-message mt-4 mb-4">나에게 다가온 새의 정체는?</span>
+        <img class="updown-slash" src="img/up-slash.png" alt="up-slash">
         <img id="img" class="rounded mt-5" src="img/img.jpg" alt="animal">
         <h2 id="animal" class="result-animal mt-4 mb-4 text-center">동물이름</h2>
         <h3 id="explain" class="result-explain mt-4 text-center">설명</h3>
@@ -72,10 +87,6 @@ Kakao.Link.sendScrap({
           <li>
             <a href="#" onclick="javascript:window.open('https://twitter.com/intent/tweet?text=[%EA%B3%B5%EC%9C%A0]%20' +encodeURIComponent(document.URL)+'%20-%20'+encodeURIComponent(document.title), 'twittersharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" alt="Share on Twitter" ><img src="img/트위터1.png" width="40" alt="트위터 공유하기"></a>
           </li>
-         <!-- 구글 플러스 공유 -->		
-              <li>
-            <a href="#" onclick="javascript:window.open('https://plus.google.com/share?url=' +encodeURIComponent(document.URL), 'googleplussharedialog','menubar=no,toolbar=no,resizable=yes, scrollbars=yes,height=350,width=600');return false;" target="_blank" alt="Share on Google+"><img src="img/구글.png" width="40" alt="구글 플러스 공유하기"></a>
-          </li>
         <!-- 카카오톡 공유 -->
               <li>
          <a href="javascript:shareKatalk()"><img src="img/카카오톡.png" width="40" alt="카카오톡 공유하기"></a></li>
@@ -83,6 +94,7 @@ Kakao.Link.sendScrap({
           <li>
             <a href="#" onclick="javascript:window.open('https://story.kakao.com/s/share?url=' +encodeURIComponent(document.URL), 'kakaostorysharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes, height=400,width=600');return false;" target="_blank" alt="Share on kakaostory"><img src="img/카카오스토리1.png" width="40" alt="카카오스토리 공유하기"></a>
           </li>
+</script>
         </ul>
     </article>
     <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
@@ -123,7 +135,7 @@ Kakao.Link.sendScrap({
             "ENTP":{"animal":"수리부엉이","explain":"무소음 비행부터 타고난 시야까지! 다재다능한 나는야 수리부엉이!타고난 활발함으로 자유분방하면서 개방적인 성격이에요. 하지만 뿜어져 나오는 카리스마는 어쩔 수 없답니다.다른 새들은 날 '수리 에디슨'이라 불러요. 그 만큼 다방면에서 똑똑하고, 새로운 계획을 만듣는 것을 좋아하는 발명가랍니다.말로는 절대 지지 않아요! 타인의 잔소리는 나에겐 그저 눈엣가시일 뿐이랍니다.밤에는 이 세상이 나의 것! 나에 대한 프라이드가 굉장히 강하고 내 자신에 대한 확신이 넘쳐 흘러요.외로운 건 절대 싫어! 혼자서 있는 걸 싫어하는 스타일이에요. 다른 새들과 상호작용하며 에너지를 채우는 스타일 이랍니다!","img":"img/img.jpg"},
             "ESTJ":{"animal":"매","explain":"카리스마를 가진 체계적 지도자 나는야 천연기념물 323-7호 '매'! 나는 타고난 지도자 스타일!  일을 조직하는데 큰 재미를 느껴요.지극히 현실주의적인 스타일이에요. 구체적이고 생산적인 일에 흥미를 느끼고 논리적인 걸 좋아합니다! 일 처리 잘 못하는 걸 못참아해요! 나는 타고난 리더라서 합리적인 선택을 만들어 내는데 도가 텄죠! 한번 뱉은 말은 꼭 지키는 스타일! 말과 행동한 것에 책임을 지는 스타일이에요. 나는야 항상 사냥중! 여유로운 것이 오히려 불안해요. 항상 상황판단 중이에요 그만큼 계산적이죠. 목적지로 비행중엔 다른건 안보여요! 마음을 한번 먹으면 더욱 더 냉정해지는 스타일이에요. 목표 이루기가 1순위로 바뀐답니다. 완벽주의 성격도 나의 목표 이루기에 큰 도움이 된답니다. 하지만 가끔 주변에서 서운해하는 경우도 존재해요.","img":"img/img.jpg"},
             "ESFJ":{"animal":"노랑부리저어새","explain":"사교에서 나를 따라올 자는 없다! 사회적 활동에 강한 나는 천연기념물 205-2호 노랑부리저어새나는 이야기 하는 걸 좋아하는 새에요. 주위새들과 함께 하는 게 좋습니다.나를 만나러 와줘요. 내가 이야기를 들어줄게요.나는 상처를 잘 받지만 회복도 빨라요. 하지만 상처를 받지 않는게 아니니 살살 말해주길 바라요.외로움을 많이 타는 편이에요나에겐 과거의 기억이 소중해요. 추억을 곱씹는 시간이 많아요.","img":"img/img.jpg"},
-            "ENFJ":{"animal":"큰고니","explain":"새 구역 핵인싸는 바로 나! 단순하고 직관적이고 객관적인 나는 천연기념물 제201-2호 큰고니!저는 새 친구들을 챙겨주고 도움을 줄 때, 행복을 느껴요. 다른 새들이 배신을 하면 그럴 수도 있지,라고 생각하며 혼자 속상해해요.제가 부드러워 보여도 화나면 무서우니 조심해주세요. 저는 새 무리간 충돌에서 해결사가 되려는 노력을 많이 해요.공감능력이 높아서 다른 새들이 하소연을 많이 해요. 저는 다른 새들에게 관심이 정말 많고 도덕적인 새랍니다.","img":"img/img/img.jpg"},
+            "ENFJ":{"animal":"큰고니","explain":"새 구역 핵인싸는 바로 나! 단순하고 직관적이고 객관적인 나는 천연기념물 제201-2호 큰고니!저는 새 친구들을 챙겨주고 도움을 줄 때, 행복을 느껴요. 다른 새들이 배신을 하면 그럴 수도 있지,라고 생각하며 혼자 속상해해요.제가 부드러워 보여도 화나면 무서우니 조심해주세요. 저는 새 무리간 충돌에서 해결사가 되려는 노력을 많이 해요.공감능력이 높아서 다른 새들이 하소연을 많이 해요. 저는 다른 새들에게 관심이 정말 많고 도덕적인 새랍니다.","img":"img/img.jpg"},
             "ENTJ":{"animal":"검독수리","explain":"강력한 지도력! 냉정한 판단력을 가진 나는 천연기념물 243-2호 검독수리!그 일 내가 할게요. 내가 해결책을 찾을 수 있어요.나는 다른 새에게 피해주는 것이 싫은 새에요. 물론 받는 것도 싫어요.나는 내가 굉장히 좋습니다.나에겐 저 먹이를 잡을 계획이 있어요! 나 혼자 잡을 수 있을 겁니다. 수단과 방법을 가리지 않아요.도전정신이 강한 편이에요! 일단 해봅시다. 일에 대한 책임은 제가 질게요.나는 너무 뛰어난 새! 하지만 그만큼 다른 새들은 나한테 고집스럽다고 말하기도 해요.","img":"img/img/img.jpg"}
         }
         function start() {
@@ -162,6 +174,8 @@ Kakao.Link.sendScrap({
                     num++;
             }          
         }
+
+</script>
     </script>
 
     <!--코드 저작권

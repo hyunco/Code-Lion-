@@ -7,6 +7,10 @@
     color: #ffffff;
     }
 
+    html {
+        height: -webkit-fill-available;
+    }
+
     article {
         display: flex;
         flex-direction: column;
@@ -28,7 +32,7 @@
     .start{
         width: 100%;
         margin: 0 auto;
-        margin-top: 80px;
+        margin-top: 60px;
     }
 
     .question {
@@ -43,7 +47,7 @@
         border-bottom: 3px solid #7c7c7c;
         border-top: 3px solid #7c7c7c;
         padding: 3vh;
-        width: 70%;
+        width: 60%;
         margin: 0 auto;
         margin-bottom: 250px;
     }
@@ -134,6 +138,8 @@
     .progress {
         background-color: #525764;
         margin: 0 auto;
+        width: 400px;
+        margin-bottom: 100px;
     }
 
 
@@ -145,6 +151,8 @@
     .question-content {
         font-size: 1.2rem;
         color: #ff9300;
+        width: 400px;
+        margin: 0 auto;
     }
 
     .rectangle {
@@ -153,16 +161,19 @@
         background-color: #383a43;
         margin: 0 auto;
     }
+
     .mid-rectangle {
         width: 288px;
         height: 1px;
         background-color: #383a43;
         margin: 0 auto;
     }
+
     .question {
         width: 100%;
         margin: 0 auto;
     }
+
 
     /* 결과 화면 */
 
@@ -195,7 +206,7 @@
         font-weight: normal;
         line-height: 30px;
         align-content: center;
-        width: 100%;
+        width: 400px;
         margin: 0 auto;
         -webkit-text-size-adjust: 100%;
         -moz-text-size-adjust: 100%;
@@ -277,46 +288,54 @@
 
 /*미디어 쿼리*/
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     
-    header {
-        top: 50px;
-    }
-    .result-page header {
-        position: fixed;
-        top: 0;
-        padding: 20px 0;
-    }
-    .section-inner {
-        justify-content: center;
-        padding: 50px 20px 18px;
+
+    .start{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 30px;
     }
 
-    #img {
-        padding-top: 86px;
+    .main-title {
+        font-family: 'Song Myung', sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        color: #7c7c7c;
+        border-bottom: 3px solid #7c7c7c;
+        border-top: 3px solid #7c7c7c;
+        padding: 3vh;
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 100px;
     }
 
-    /* .btn-container {
-        padding: 0px 0px 100px;
-    } */
+    .progress-bar {
+        background-color: #ff9300;
+    }
 
-    .swiper-pagination {
-        display: block;
+    .progress {
+        background-color: #525764;
+        margin: 0 auto;
+        width: 80%;
     }
-    .swiper-slide {
-        max-width: 340px;
-    }
-    .swiper-wrapper {
-        margin-left: 0px;
-    }
-    /* .main-container {
-        height: 100vh;
-    } */
 
-    .main-banner-container {
-        top: 80px;
+    .result-explain{
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        font-weight: 300;
+        color: #ff9300;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: normal;
+        line-height: 30px;
+        align-content: center;
+        width: 100%;
+        margin: 0 auto;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
     }
-    .result-banner-container {
-        top: 80px;
-    }
+
+
 }

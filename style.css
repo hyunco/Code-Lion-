@@ -29,6 +29,7 @@
     .start{
         width: 400px;
         margin: 0 auto;
+        margin-top: 80px;
     }
 
     .question {
@@ -36,14 +37,14 @@
     }
 
     .main-title {
-        font-family: 'Noto Sans KR', sans-serif;
-        font-size: 30px;
+        font-family: 'Song Myung', sans-serif;
+        font-size: 26px;
         font-weight: 700;
         color: #7c7c7c;
         border-bottom: 3px solid #7c7c7c;
         border-top: 3px solid #7c7c7c;
         padding: 3vh;
-        margin-bottom: 120px;
+        margin-bottom: 100px;
     }
 
     .updown-slash {
@@ -53,12 +54,11 @@
 
     .sub-title {
         font-family: 'Noto Sans KR', sans-serif;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 500;
         color: #ebebeb;
         line-height: 40px;
         width: 100%;
-        margin-bottom: 120px;
     }
 
     .start-cover {
@@ -72,7 +72,8 @@
         font-size: 16px;
         color:#ff9300;
         background-color: #1f1f1f;
-        border:#1f1f1f;
+        width: 300px;
+        height: 50px;
     }
 
     .btn-start, .btn-start:visited, .btn-start:active {
@@ -80,7 +81,7 @@
         font-size: 16px;
         color:#ff9300;
         background-color: #1f1f1f;
-        border:#1f1f1f;
+        border: 3px solid #1f1f1f;
     }
 
     .btn-start:active, .btn-start:focus {
@@ -95,6 +96,12 @@
         font-family: 'Noto Sans KR', sans-serif;
         background-color: #ff9300;
         color: #1f1f1f;
+        border: 3px solid #ff9300;
+    }
+
+    .updown-slash {
+        width: 200px;
+        height: 10px;
     }
 
 

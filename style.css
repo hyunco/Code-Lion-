@@ -136,7 +136,7 @@
 
 
     .slash-element {
-        width: 24px;
+        width: 16px;
         margin: 0 auto;
     }
 
@@ -155,6 +155,10 @@
         width: 288px;
         height: 1px;
         background-color: #383a43;
+        margin: 0 auto;
+    }
+    .question {
+        width: 400px;
         margin: 0 auto;
     }
 

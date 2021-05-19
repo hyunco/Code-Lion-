@@ -265,6 +265,16 @@
         margin-bottom: 30vh;
     }
 
+
+/*푸터*/
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 200px;
+}
+
 /*미디어 쿼리*/
 
 @media (min-width: 768px) {

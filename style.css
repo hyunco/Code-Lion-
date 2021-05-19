@@ -32,7 +32,7 @@
     .start{
         width: 100%;
         margin: 0 auto;
-        margin-top: 60px;
+        margin-top: 40px;
     }
 
     .question {
@@ -49,7 +49,7 @@
         padding: 3vh;
         width: 60%;
         margin: 0 auto;
-        margin-bottom: 250px;
+        margin-bottom: 180px;
     }
 
     .updown-slash {
@@ -114,20 +114,22 @@
     /* 문제 화면 */
 
     .btn-answer, .btn-answer:visited, .btn-answer:hover, .btn-answer:active, .btn-answer:focus {
+        font-size: 18px;
+        font-family: 'Noto Sans KR', sans-serif;
         background-color: #1f1f1f;
         border:#1f1f1f;
         width: 288px;
         margin: 0 auto;
-        font-size: 1.1rem;
         color: #ffffff;
     }
 
     .btn-answer:hover {
+        font-size: 18px;
+        font-family: 'Noto Sans KR', sans-serif;
         background-color: #ff9300 !important;
         border:#1f1f1f !important;
         width: 288px;
         margin: 0 auto;
-        font-size: 1.1rem;
         color: #ffffff;
     }
 
@@ -139,7 +141,7 @@
         background-color: #525764;
         margin: 0 auto;
         width: 400px;
-        margin-bottom: 100px;
+        margin-bottom: 30px;
     }
 
 
@@ -149,7 +151,8 @@
     }
 
     .question-content {
-        font-size: 1.2rem;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 20px;
         color: #ff9300;
         width: 400px;
         margin: 0 auto;

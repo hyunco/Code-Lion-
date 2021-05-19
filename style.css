@@ -5,9 +5,6 @@
     body {
     background-color: #1f1f1f;
     color: #ffffff;
-    -webkit-text-size-adjust: 100%;
-        -moz-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
     }
 
     article {
@@ -29,7 +26,7 @@
 
 
     .start{
-        width: 70vh;
+        width: 50%;
         margin: 0 auto;
         margin-top: 80px;
     }
@@ -160,7 +157,7 @@
         margin: 0 auto;
     }
     .question {
-        width: 70vh;
+        width: 50%;
         margin: 0 auto;
     }
 
@@ -209,7 +206,7 @@
     }
 
     .result {
-        width: 70vh;
+        width: 50%;
         margin: 0 auto;
         display: none;
     }

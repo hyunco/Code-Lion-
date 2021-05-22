@@ -6,7 +6,8 @@
 
 
     body {
-    background-color: #1f1f1f;
+    background-image: url("img/Media\ 00.gif");
+    background-size: cover;
     color: #ffffff;
     }
 
@@ -72,9 +73,9 @@
         font-family: 'Song Myung', sans-serif;
         font-size: 26px;
         font-weight: 700;
-        color: #7c7c7c;
-        border-bottom: 3px solid #7c7c7c;
-        border-top: 3px solid #7c7c7c;
+        color: #000000;
+        border-bottom: 3px solid #000000;
+        border-top: 3px solid #000000;
         padding: 3vh;
         width: 60%;
         margin: 0 auto;
@@ -91,7 +92,7 @@
         font-family: 'Noto Sans KR', sans-serif;
         font-size: 20px;
         font-weight: 500;
-        color: #ebebeb;
+        color: #000000;
         line-height: 40px;
     }
 
@@ -116,14 +117,14 @@
     .btn-start, .btn-start:visited, .btn-start:active {
         font-family: 'Noto Sans KR', sans-serif;
         font-size: 18px;
-        color:#ff9300;
+        color:#ffffff;
         background-color: #1f1f1f;
         border: 3px solid #1f1f1f;
     }
 
     .btn-start:active, .btn-start:focus {
         font-family: 'Noto Sans KR', sans-serif;
-        background-color: #ff9300 !important;
+        background-color: #74aa86 !important;
         border:#1f1f1f !important;
         font-size: 18px;
         color:#ffffff;
@@ -131,9 +132,9 @@
 
     .btn-start:hover {
         font-family: 'Noto Sans KR', sans-serif;
-        background-color: #ff9300;
+        background-color: #74aa86;
         color: #1f1f1f;
-        border: 3px solid #ff9300;
+        border: 3px solid #74aa86;
     }
 
     .updown-slash {

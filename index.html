@@ -40,7 +40,7 @@
     <!--시작화면-->
     <article class="start">
         <h1 class="main-title mt-5 text-center"> 당신은 어떤 새를 만나게 될까요?</h1>
-        <img class="logo" src="img/logo2.png">
+        <img class="logo" src="img/logoblue.png">
         <h2 class="sub-title mt-3 text-center">일행과 낯선 곳을 여행 하다가 <br> 길을 잃었다!</h2>
         <img class="updown-slash mt-5" src="img/up-slash.png" alt="up-slash">
         <div class="start-cover mt-3 mb-3">
@@ -167,7 +167,6 @@
                 ($("#SN").val()<2)?mbti+="N":mbti+="S";
                 ($("#TF").val()<2)?mbti+="F":mbti+="T";
                 ($("#JP").val()<2)?mbti+="P":mbti+="J";
-                alert(mbti);
                 $("#img").attr("src",result[mbti]["img"]);
                 $("#animal").html(result[mbti]["animal"]);
                 $("#explain").html(result[mbti]["explain"]);
@@ -208,14 +207,14 @@
 
 <!-- 패치할 것 
 1. 페이지 넘어갈때 트랜지션
-2. 팀명하고 문구 헤더 ->오르새로 변경!
+2. 팀명하고 문구 헤더 ->오르새로 변경!(5.20 hyunco)
 3. footer 작업 (인스타그램 계정)
 4. 텍스트 부분 정리하기 (문단 나누기)->리스트로 수정. 다만 결과 설명 부분만 왼쪽 정렬로 하려고 하는데 
-<div style="text-align:justify"> 요 코드를 붙여 넣으면 처음부터 실행이 안된다 .. 두둥.. 
+<div style="text-align:justify"> 요 코드를 붙여 넣으면 처음부터 실행이 안된다 .. 두둥.. (5.20 hyunco)
 5. 상민님 배경 디자인 탑재
 6. updown slash 이미지 색상 재배치 혹은 재구축 <- 문제 화면은 새 이미지로 변경 시작이랑 끝은 boder나 새로운 슬래쉬로 바꿀듯
 7. 배경 디자인 따라서 전반적인 색상 리디자인
 8. 결과 부분 캐릭터 디자인들 반영
-9. 질문 다 마치고 결과 알림창으로 뜨면서 스포되는 부분 삭제.. 바로 결과창으로 넘어가게
+9. 질문 다 마치고 결과 알림창으로 뜨면서 스포되는 부분 삭제.. 바로 결과창으로 넘어가게->alert 코드 삭제(5.22 hyunco)
 10. 결과 페이지에 텀블벅 펀딩 소개 부분도 추가하면 좋을듯..! 공유하기 아래부분에 -->
 

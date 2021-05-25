@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
     <title>나와 닮은 멸종위기 새는?</title>
-    <meta name="description" content="나랑 꼭 닮은 멸종위기 조류를 MBTI를 기반으로 추천해주는 테스트입니다.">
+    <meta name="description" content="나랑 꼭 닮은 멸종위기 조류를 심리테스트 기반으로 추천해주는 테스트입니다.">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" media="screen and (max-width: 768px)" href="style.css">
@@ -40,14 +40,15 @@
     <!--시작화면-->
     <article class="start">
         <h1 class="main-title mt-5 text-center"> 당신은 어떤 새를 만나게 될까요?</h1>
-        <img class="logo" src="img/logoblue.png">
+        <!--img class="logo" src="img/notblogo.png"-->
         <h2 class="sub-title mt-3 text-center">일행과 낯선 곳을 여행 하다가 <br> 길을 잃었다!</h2>
         <img class="updown-slash mt-5" src="img/up-slash.png" alt="up-slash">
         <div class="start-cover mt-3 mb-3">
-            <button type="button" id="start-button" class="btn-start btn btn-primary" onclick='start();'>당신의 반응은?</button>
+            <button type="button" id="start-button" class="btn-start btn btn-primary" onclick='start(); /*myfuntion();*/'>당신의 반응은?</button>
         </div>
         <img class="updown-slash" src="img/down-slash.png" alt="up-slash">
     </article>
+    <audio autoplay controls> <source src="forest sound.mp3" type="audio/mp3"> </audio>
 
     <!--문제화면-->
     <article class="question">
@@ -178,12 +179,16 @@
                     $("#B").html(q[num]["B"]);
                     num++;
             }          
-        }
+        };
+       /*function myfuntion(){
+          var urlString='url('img/img1.gif')';
+          document.getElementById("start-button").style.backgroundImage=urlString;
+       };*/
+
+
     
         
       
-
-    
 </script>
     </script>
 
@@ -216,5 +221,9 @@
 7. 배경 디자인 따라서 전반적인 색상 리디자인
 8. 결과 부분 캐릭터 디자인들 반영
 9. 질문 다 마치고 결과 알림창으로 뜨면서 스포되는 부분 삭제.. 바로 결과창으로 넘어가게->alert 코드 삭제(5.22 hyunco)
-10. 결과 페이지에 텀블벅 펀딩 소개 부분도 추가하면 좋을듯..! 공유하기 아래부분에 -->
+10. 결과 페이지에 텀블벅 펀딩 소개 부분도 추가하면 좋을듯..! 공유하기 아래부분에 
+
+수정한 것 (5.25 hyunco)
+1.시작-문제-결과에 반투명 배경색 입힘
+2.progressbar와 botton 색 조정-->
 

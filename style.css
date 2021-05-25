@@ -6,8 +6,12 @@
 
 
     body {
-    background-image: url("img/Media\ 00.gif");
+    background-image: url("img/img0.gif");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+    background-color: #1f1f1f;;
     color: #ffffff;
     }
 
@@ -60,10 +64,13 @@
 
 
     .start{
-        width: 100%;
+        width: 60%;
         margin: 0 auto;
         margin-top: 10px;
+        background-color: rgba(255,255,255,0.35);
+        border-radius: 30px;
     }
+
 
     .question {
         display: none;
@@ -94,6 +101,7 @@
         font-weight: 500;
         color: #000000;
         line-height: 40px;
+        margin: auto;
     }
 
     .start-cover {
@@ -104,6 +112,8 @@
         height: 20%;
         margin: auto;
     }
+
+
 
     .btn-start {
         font-family: 'Noto Sans KR', sans-serif;
@@ -159,7 +169,7 @@
     .btn-answer:hover {
         font-size: 18px;
         font-family: 'Noto Sans KR', sans-serif;
-        background-color: #ff9300;
+        background-color: #74aa86;
         border: 3px solid #1f1f1f;
         width: 288px;
         margin: 0 auto;
@@ -167,7 +177,7 @@
     }
 
     .progress-bar {
-        background-color: #ff9300;
+        background-color: #74aa86;
     }
 
     .progress {
@@ -180,7 +190,7 @@
     .question-content {
         font-family: 'Noto Sans KR', sans-serif;
         font-size: 20px;
-        color: #ff9300;
+        color: #000000;
         width: 400px;
         margin: 0 auto;
     }
@@ -200,8 +210,11 @@
     }
 
     .question {
-        width: 100%;
+        width: 60%;
         margin: 0 auto;
+        background-color: rgba(255,255,255,0.35);
+        border-radius: 30px;
+        margin-bottom: 30px;
     }
 
     .bird-icon {
@@ -260,6 +273,8 @@
         width: 100%;
         margin: 0 auto;
         display: none;
+        background-color: rgba(255,255,255,0.35);
+        border-radius: 30px;
     }
 
     #img{
@@ -343,9 +358,9 @@
         font-family: 'Song Myung', sans-serif;
         font-size: 60;
         font-weight: 700;
-        color: #7c7c7c;
-        border-bottom: 3px solid #7c7c7c;
-        border-top: 3px solid #7c7c7c;
+        color: #000000;
+        border-bottom: 3px solid #000000;
+        border-top: 3px solid #000000;
         padding: 3vh;
         width: 60%;
         margin: 0 auto;
@@ -356,7 +371,7 @@
         font-family: 'Noto Sans KR', sans-serif;
         font-size: 18px;
         font-weight: 500;
-        color: #ebebeb;
+        color: #000000;
         line-height: 40px;
     }
 

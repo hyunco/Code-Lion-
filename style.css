@@ -336,6 +336,13 @@
     margin-bottom: 200px;
 }
 
+.insta{
+    width: 20px;
+    height: 20px;
+    
+}
+
+
 /*미디어 쿼리*/
 
 @media (max-width: 768px) {

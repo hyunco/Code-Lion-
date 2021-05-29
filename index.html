@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZS3RRHQBQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZS3RRHQBQ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-RZS3RRHQBQ');
-</script>
+    gtag('config', 'G-RZS3RRHQBQ');
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
-    <title>나와 닮은 멸종위기 새는?</title>
-    <meta name="description" content="나랑 꼭 닮은 멸종위기 조류를 심리테스트 기반으로 추천해주는 테스트입니다.">
+    <title>나와 꼭 닮은 멸종위기 조류는?</title>
+    <meta name="description" content="나랑 꼭 닮은 멸종위기 조류를 MBTI를 기반으로 추천해주는 테스트입니다.">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" media="screen and (max-width: 768px)" href="style.css">
@@ -25,40 +25,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
-     <!-- KakaoTalk Share Script -->
-     <script src="https://developers.kakao.com/sdk/js/kakao.min/js"></script>
-    <!-- Kakao talk script-->
-    <script type="text/javascript">
-        Kakao.init('5e758dd8876482ffabe379e630d7a7e8'); // 초기화
-        function sendLink() { // 카카오톡 공유하기
-          Kakao.Link.sendDefault({
-            objectType: 'text',
-            text: '기본 템플릿으로 제공되는 텍스트 템플릿은 텍스트를 최대 200자까지 표시할 수 있습니다. 텍스트 템플릿은 텍스트 영역과 하나의 기본 버튼을 가집니다. 임의의 버튼을 설정할 수도 있습니다. 여러 장의 이미지, 프로필 정보 등 보다 확장된 형태의 카카오링크는 다른 템플릿을 이용해 보낼 수 있습니다.',
-            link: {
-              mobileWebUrl: 'https://developers.kakao.com/docs/js/kakaotalklink#텍스트-템플릿-보내기',
-              webUrl: 'https://developers.kakao.com/docs/js/kakaotalklink#텍스트-템플릿-보내기',
-            },
-          })
-        }
-    </script>
-  <!-- instagram shere script-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
+  
 
 </head>
-<body class="container">
+<body id="container">
+  
+ 
     <!--시작화면-->
     <article class="start">
         <h1 class="main-title mt-5 text-center"> 당신은 어떤 새를 만나게 될까요?</h1>
         <h2 class="sub-title mt-3 text-center">일행과 낯선 곳을 여행 하다가 <br> 길을 잃었다!</h2>
-        <img class="updown-slash mt-5" src="img/up-slash.png" alt="up-slash">
         <div class="start-cover mt-3 mb-3">
-            <button type="button" id="start-button" class="btn-start btn btn-primary" onclick='start();'>당신의 반응은?</button>
-        </div>
-        <img class="updown-slash" src="img/down-slash.png" alt="up-slash">
-        <img class="logo" src="img/notblogo.png">
-    </article>
-    <audio autoplay controls> <source src="forest sound.mp3" type="audio/mp3"> </audio>
+            <button type="button" id="start-button" class="btn-start btn btn-primary" onclick='start(), bgchange();'>당신의 반응은?</button>
+        </div>  
 
+        <div class="col-sm-4 col-sm-offset-4">
+          <audio controls hidden="true" autoplay="true" style="width: 600px;">
+            <source src="forest sound.mp3">
+          </audio>
+        </div>
+    </article>  
+
+  
     <!--문제화면-->
     <article class="question">
         <div class="progress mt-5">
@@ -69,11 +58,10 @@
         <img class="bird-icon" src="img/dove.png" alt="bird-icon">
         <input id="type" type="hidden" value="EI">
         <div class="rectangle mt-5"></div>
-        <button id="A" type="button" class="btn-answer btn btn-primary pt-5 pb-5">대답A</button>
+        <button id="A" type="button" class="btn-answer btn btn-primary pt-5 pb-5" onclick='bgchange()'>대답A</button>
         <div class="mid-rectangle"></div>
-        <button id="B" type="button" class="btn-answer btn btn-primary pt-5 pb-5">대답B</button>
+        <button id="B" type="button" class="btn-answer btn btn-primary pt-5 pb-5" onclick='bgchange()'>대답B</button>
         <div class="rectangle"></div>
-        <p class="mt-7"></p>
     </article>
     <!-- 결과화면 -->
     <article class="result">
@@ -123,43 +111,43 @@
     <script>
         var num=1;
         var q={
-            1:{"title":"일행과 여행을 하다 길을 잃었다... 나의 반응은?","type":"EI","A":"일단 직진해본다.","B":"우선 주변에 뭐가 있는지부터 살펴본다."},
-            2:{"title":"조금 뒤, 어디선가 소리가 난다. <br> 어떻게 해야 좋을까?","type":"EI","A":"그곳으로 가서 무슨 소리인지 직접 알아낸다.","B":"무시하고 누군가 알아내줄 때까지 기다린다."},
+            1:{"title":"일행과 여행을 하다 길을 잃었다...<br> 나의 반응은?","type":"EI","A":"일단 직진해본다.","B":"우선 주변에 뭐가 있는지부터 살펴본다."},
+            2:{"title":"조금 뒤, 어디선가 소리가 난다.<br> 어떻게 해야 좋을까?","type":"EI","A":"그곳으로 가서 무슨 소리인지 직접 알아낸다.","B":"무시하고 누군가 알아내줄 때까지 기다린다."},
             3:{"title":"어느새 초저녁, 무엇을 할 것인가?","type":"EI","A":"일단 밥이 우선! 식량을 구해본다.","B":"우선 잠잘 곳이 중요.! 눈을 붙일 수 있는 터를 만들어 본다."},
-            4:{"title":"해가 지기 일보직전! <br> 고개를 돌리니 눈앞에 장관이 펼쳐졌다.","type":"SN","A":"잠시 바위에 앉아 언제 올지 모를 이 아름다운 풍경을 감상한다.","B":"해가 지기 일보직전? 더 속도를 내어 밤을 대비한다."},
+            4:{"title":"해가 지기 일보직전!<br> 고개를 돌리니 눈앞에 장관이 펼쳐졌다.","type":"SN","A":"잠시 바위에 앉아 언제 올지 모를 이 아름다운 풍경을 감상한다.","B":"해가 지기 일보직전? 더 속도를 내어 밤을 대비한다."},
             5:{"title":"일행과 식량을 찾던 중 10개의 열매가 열린 나무를 발견했다.","type":"SN","A":"10개의 열매를 어떻게 따야 더 효율적일지 생각해본다.","B":"10개로 어떻게 요리를 할지 생각해본다."},
             6:{"title":"자려고 누웠더니 나무가 무성하다...<br> 이때 든 나의 생각은?","type":"SN","A":"와... 너무 이쁘다! 간직하고 싶어","B":"어.. 어린왕자가 생각나네? 오늘 꿈에 비슷한 내용이 나왔으면 좋겠다."},
-            7:{"title":"다음날 길을 걷다 다리 다친 새를 발견했다.<br> 당신의 선택은?","type":"TF","A":"아프겠네... 하지만 자연의 일부로 어쩔 수 없지 뭐..","B":"얼마나 아플까? 다리가 다치면 아무것도 할 수 없을 거야. 너무 가여워"},
-            8:{"title":"누군가 새를 데려가자는 의견을 냈다. <br> 어떤 대답을 할까?","type":"TF","A":"우리도 지키기 힘든데 다친 새를?","B":"그래! 데려가서 치료해주자 좋은 동료가 될 수 있을거야"},
-            9:{"title":"다수결로 새와 함께 길을 찾아 떠나게 되었다.<br>다시 저녁, 식량을 먹으려고 보니 일행중 한명이 1인분의 식량을 잃어버렸다.<br> 당신의 반응은?","type":"TF","A":"이렇게 중요할 때에 식량을..? 당장 구하러 갑시다!","B":"그래도 함께 힘들게 왔는데 괜찮아! 그리고 고작 1인분인데 뭐 어때~"},
-            10:{"title":"드디어 강을 발견한 일행들!<br> 일행들은 물고기 사냥팀과 채집팀으로 나눴다.<br> 당신은 홀로 채집팀에 새와 함께 남겨졌다.<br> 주어진 시간은 1시간!<br> 무엇을 먼저 할까?","type":"JP","A":"1시간에 몇 개정도 딸 수 있을지 생각해보고 계획적으로 움직인다.","B":"최대한 상황을 즐기다가 나중에 열매를 딴다."},
-            11:{"title":"어쩌다보니 당신을 제일 잘 따르는 새<br> 일행과 떨어져 어디론가 더 가자고 날개짓을 하는데..","type":"JP","A":"일행과의 일정에서 없던 내용이므로, 새를 데리고 다시 일행의 계획에 참여한다.","B":"한번 가볼까? 금방 돌아오면 된다는 생각으로 얼른 다녀온다."},
+            7:{"title":"다음날 길을 걷다 다리를 다친 새를 발견했다.<br> 당신의 선택은?","type":"TF","A":"아프겠네... 하지만 자연의 일부로 어쩔 수 없지 뭐..","B":"얼마나 아플까? 다리가 다치면 아무것도 할 수 없을 거야. 너무 가여워"},
+            8:{"title":"누군가 새를 데려가자는 의견을 냈다. <br> 어떻게 할까?","type":"TF","A":"우리도 지키기 힘든데 다친 새를?","B":"그래! 데려가서 치료해주자 좋은 동료가 될 수 있을거야"},
+            9:{"title":"다수결로 새와 함께 길을 찾아 떠나게 되었다.<br>다시 저녁, 식량을 먹으려고 보니 일행 중 한명이 1인분의 식량을 잃어버렸다.","type":"TF","A":"이렇게 중요할 때에 식량을..? 당장 구하러 갑시다.","B":"그래도 함께 힘들게 왔는데 괜찮아! 그리고 고작 1인분인데 뭐 어때~"},
+            10:{"title":"드디어 강을 발견한 일행들!<br> 일행들은 물고기 사냥팀과 채집팀으로 나눴다.<br> 당신은 홀로 열매채집팀에 새와 함께 남겨졌다.<br> 주어진 시간은 1시간! 무엇을 먼저 할까?","type":"JP","A":"1시간에 열매를 몇 개정도 딸 수 있을지 생각해보고 계획적으로 움직인다.","B":"최대한 상황을 즐기다가 나중에 열매를 딴다."},
+            11:{"title":"어쩌다보니 당신을 제일 잘 따르는 새,<br> 일행과 떨어져 어디론가 더 가자고 날개짓을 하는데...","type":"JP","A":"일행과의 일정에서 없던 내용이므로, 새를 데리고 다시 일행의 계획에 참여한다.","B":"한번 가볼까? 금방 돌아오면 된다는 생각으로 얼른 다녀온다."},
             12:{"title":"당신이 머뭇거린 사이, 새는 이미 멀리서 당신을 향해 날개짓을 한다.<br> 새에게 다가가자 옆으로 저 멀리 원래 찾던 마을이 희미하게 보인다.","type":"JP","A":"우선 길을 안 잃어버리게 표시해둔 뒤 일행들을 찾으러 간다.","B":"우선 마을을 둘러보고 일행을 찾으러 가본다."}
         }
         var result={
-            "ISTJ":{"animal":"큰기러기","explain":
-            "질서정연한 삶을 즐기는 나는야 멸종위기 야생생물 2급인 큰 기러기!야생에서 살아남기 위해 항상 현실적이면서 진지한 태도는 필수!<br><li>치밀하고 꼼꼼한 성격으로 규칙적인 삶을 즐긴답니다.</li><br><li>생각보다 보수적이에요!</li><br><li>틀에 짜여진 업무와 사회안에서 성실하게 임할 각오가 되어있답니다~!</li><br><li>조용하고 성실한 것은 나의 무기!그러다보니 이 원칙주의 성격은 다른 새들한테 융통성이 없다는 소리를 가끔씩은 들어요.</li><br><li>계획적인 나는 일을 할땐 다소 냉철한 면이 있답니다. 조용하지만 일할땐 강해요.</li>","img":"img/큰기러기.png"},
-            "ISFJ":{"animal":"따오기","explain":"사랑스럽고 매너가 넘치는 나는 천연기념물 198호 따오기.정적인 생활을 사랑하는 새에요.<br><li>나는 내일의 계획, 둥지의 계획, 알의 계획도 가지고 있어요.</li><br><li>가능하면 이대로 삶이 흘러줬음 좋겠어요.평화로운 생활이 좋거든요.</li><br><li>따뜻한 말을 해주세요. 나는 칭찬을 좋아한답니다.</li><br><li>어려운 일이 있으면 얘기해주세요. 내가 도울수 있는 일이 있다면 돕고 싶어요.</li><br><li>온화하고 성실해요. 새들의 무리에 협조를 잘하는 편입니다.</li>","img":"img/따오기.png"},
-            "INFJ":{"animal":"긴꼬리딱새","explain":"다른 새에게 피해주는 것도 받는 것도 싫은, 알고 보면 매력 덩어리, 나는야 멸종위기 2급의 긴꼬리딱새!<br><li>독립심이 강한 마이버드웨이 입니다. 밖에서 친구들이랑 비행하는거도 좋지만 나무 위에서 혼자 있는게 더 좋아요.</li><br><li>나는 좋고 싫음이 명확해서 친한 새들과만 놀아요. 나를 싫어하는 새들은 아웃 오브 안중으로 관심 없어요.</li><br><li>틀에 박힌 먹이 사냥이나 비행은 지루해요.</li><br><li>대장 새가 이래라 저래라 지시하는게 마음에 안들어요.외적으로 화려하고 나와 대화가 잘 통하는 새는 연락주세요.</li>","img":"img/긴꼬리딱새.png"},
-            "INTJ":{"animal":"뿔종다리","explain":"아는 것이 많고 창의적인 나는 멸종위기 야생생물 2급 뿔종다리!<br><li>나는 이성적인 새에요. 감정에 휘둘리지 않죠.</li><br><li>주위의 상황을 잘 볼 줄 알아요. 먹이의 기회가 온다면 놓치치 않아요.</li><br><li>나에게 다가오려면 오랜 시간을 투자하는 것을 권해요.</li><br><li>한 번 한다하면 무조건 합니다.난관을 도전적으로 받아드려요!</li><br><li>나의 일에 열정적인 편입니다.</li>","img":"img/뿔종다리.png"},
-            "ISTP":{"animal":"쇠검은머리쑥새","explain":"사색하는 시간은 나의 엔돌핀! 혼자 생각하는 시간을 좋아하는 나는야 멸종위기 야생생물 2급인 쇠검은 머리 쑥새!<br><li>혼자서도 사냥 문제 없어요! 독립적이지만 모험적이라 혼자서도 모든일을 척척박사처럼 할 수 있어요!</li><br><li>비행 중 응급상황이 발생해도 당황하지 않아요! 객관적이고 신중한 나는 위기 상황에서도 침착하게 일을 해결한답니다!</li><br><li>같은 곳에 오래 머무르는 건 내취향이 아니에요! 이 세상은 어디든 가보고 싶어요!</li><br><li>반복되는 하루하루는 지겨우니 계속해서 새로운 곳을 시도하는 스타일이에요.</li>","img":"img/쇠검은머리쑥새.png"},
-            "ISFP":{"animal":"흰목물떼새","explain":"그냥 귀찮고, 노는건 좋지만 금방 지치는, 나는야 배려형 개인주의 멸종위기2급 흰목물떼새!<br><li>나는 나무늘보같은 새입니다. 사냥, 비행, 무리 생활 등 모든 새LIFE가 귀찮아요.</li><br><li>누구보다 우리의 보금자리를 잘 지킬수 있어요. 둥지순이거든요. 친구 새랑 비행 약속이 취소되면 너무 행복해요.</li><br><li>나는 다른 새들의 관심이 정말 싫지만 좋아요. 조용한 관종이에요.</li><br><li>다들 날 순두부 같이 연한 새로 생각들하는데 생각보다 영리하답니다.</li><br><li>이도저도 포기 못하는 모순적인 새랍니다.</li>","img":"img/흰목물떼새.png"},
-            "INFP":{"animal":"넓적부리도요","explain":"아무생각 없어 보여도 수많은 망상 중, 나는야 멸종위기 1급 넓적 부리도요!<br><li>나는 이상주의적인 새에요!</li><br><li>제가 가만히 서서 움직이지 않을 때는 잡생각 중이랍니다.</li><br><li>사실 새 무리에서 엄청난 관종이지만 막상 관심을 받으면 쑥쓰러워요.</li><br><li>게으른 완벽주의자여서 실패할 먹이사냥은 시작도 하지 않아요.그래서 먹이는 한번에 몰아서 벼락치기로 잡아요.</li><br><li>나랑 친해지려면 이기적인 마음을 버려주세요.</li><br><li>불의를 보면 참지 못하지만, 귀찮아서 참고 살아요.</li>","img":"img/넓적부리도요.png"},
-            "INTP":{"animal":"까막딱따구리","explain":"붉은 머리는 나의 트레이드 마크! 똑똑이를 담당하고 있는 나는야 천연기념물 제242호 까막 딱따구리!<br><li>먹이를 구할 때도 그냥 구하지 않아요, 명석한 나의 두뇌로 항상 논리적이고 분석적으로 해결한답니다.</li><br><li>고독함 자체는 나의 즐거움, 깊은 사색은 나에게 쉼터가 되기도 한답니다.</li><br><li>명석한 두뇌로 위기 상황을 창의적이게 해결해요. 물론 새로운 상황에도 빠르게 잘 적응한답니다.</li><br><li>어떤 것을 선택할 때 시간이 좀 걸리는 스타일이에요. 변덕쟁이라 언제 내 마음이 바뀔지 모르거든요~</li><br><li>똑똑한 나의 두뇌를 믿다 가끔 실수를 하기도 해요.</li><br><li>생각한 것을 실행으로 옮기기는 조금은....귀찮아요.</li><br><li>나보다 덜 똑똑한 이들은 답답해요! 그런 새들이 나한테 뭘 시킨다면 난 그자리에서 도망칠지도 몰라요!</li><br><li>아마 나의 피앙새는 가장 똑똑한 새일거에요. 존경할 만한 포인트가 있는 걸 좋아하거든요.</li>","img":"img/까막딱따구리.png"},
-            "ESTP":{"animal":"개리","explain":"수십마리의 떼를 이끄는 특유의 리더쉽이 있는 당신은 천연기념물 제 325호, 개리!<br><li>나는 모험을 항상 즐기는 편이에요. 왕성한 활동을 하는 것을 너무 좋아합니다.</li><br><li>습지는 나의 필드! 관찰력이 좋은 나는 강한 현실감각으로 먹이를 구한답니다.</li><br><li>개리들에겐 지루함이란 없어요! 새로운 것을 찾는 것 자체가 나에게는 커다란 기쁨!</li><br><li>성취 욕구와 승부 욕구를 뺀 개리는 개리라고 할 수가 없어요~!</li><br><li>규칙은 싫어! 나의 길은 내가 만들어요. 하늘의 길도 진두지휘하는 개리랍니다.</li><br><li>가끔은 지나치게 즉흥적인 행동에 의존하는 성향이 있어요. 오늘 할일을 내일 미루는 것도 나의 특성이에요.</li>","img":"img/개리.png"},
-            "ESFP":{"animal":"팔색조","explain":"멀리 나는 나를 보면 불러줘! 정이 많은 나는 천연기념물 204호 팔색조.<br><li>나는 화려한 걸 좋아해요! 여러분들이 좋아요.</li><br><li>다가올 땐 날개를 흔들어요! 나는 인싸중에 인싸이자 분위기 메이커! 긍적정인 기운이 강해요.</li><br><li>빨리 빨리 움직이는 것을 좋아해요! 일찍 일어나는 새가 먹이를 잡기 마련이거든!</li><br><li>오늘 먹을 걱정만 해요. 내일은 내일의 내가 할거야~~</li>","img":"img/팔색조.png"},
-            "ENFP":{"animal":"섬개개비","explain":"항상 밝은 미소와 높은 텐션, 다른 새들과 어울리기는 무척이나 좋아하는, 나는야 멸종위기 2급의 섬개개비!<br><li>나는 다른 새들의 연애에 관심이 많아요. 새 무리의 분위기 메이커입니다.</li><br><li>나는 하이텐션이지만 감정기복이 심해서 갑자기 우울해지기도 해요.</li><br><li>사교성이 좋아서 처음보는 새 무리들과 금방 친해져요.</li><br><li>다른 새가 무례한 행동을 하면 표정관리가 잘 안돼요.</li><br><li>긍정적이고 낙천적이지만 인내심은 부족해요.<li>","img":"img/섬개개비.png"},
-            "ENTP":{"animal":"수리부엉이","explain":"무소음 비행부터 타고난 시야까지! 다재다능한 나는야 수리부엉이!<br><li>타고난 활발함으로 자유분방하면서 개방적인 성격이에요.</li><br><li>뿜어져 나오는 카리스마, 나도 감당 못하겠어요~~</li><br><li>다른 새들은 날 '수리 에디슨'이라 불러요. 그 만큼 다방면에서 똑똑하고, 새로운 계획을 만듣는 것을 좋아하는 발명가랍니다.</li><br><li>말로는 절대 지지 않아요! 타인의 잔소리는 나에겐 그저 눈엣가시일 뿐이랍니다.</li><br><li>밤에는 이 세상이 나의 것! 나에 대한 프라이드가 굉장히 강하고 내 자신에 대한 확신이 넘쳐 흘러요.</li><br><li>외로운 건 절대 싫어! 혼자서 있는 걸 싫어하는 스타일이에요. 다른 새들과 상호작용하며 에너지를 채우는 스타일 이랍니다!</li>","img":"img/수리부엉이.png"},
-            "ESTJ":{"animal":"매","explain":"카리스마를 가진 체계적 지도자 나는야 천연기념물 323-7호, 매!<br><li>나는 타고난 지도자 스타일!  일을 조직하는데 큰 재미를 느껴요.</li><br><li>지극히 현실주의적인 스타일이에요. 구체적이고 생산적인 일에 흥미를 느끼고 논리적인 걸 좋아합니다! 일 처리 잘 못하는 걸 못참아해요!</li><br><li>나는 타고난 리더라서 합리적인 선택을 만들어 내는데 도가 텄죠!</li><br><li>한번 뱉은 말은 꼭 지키는 스타일! 말과 행동한 것에 책임을 지는 스타일이에요.</li><br><li>나는야 항상 사냥중! 여유로운 것이 오히려 불안해요. 항상 상황판단 중이에요 그만큼 계산적이죠.</li><br><li>목적지로 비행중엔 다른건 안보여요! 마음을 한번 먹으면 더욱 더 냉정해지는 스타일이에요. 목표 이루기가 1순위로 바뀐답니다.</li><br><li>완벽주의 성격도 나의 목표 이루기에 큰 도움이 된답니다. 하지만 가끔 주변에서 서운해하는 경우도 존재해요.</li>","img":"img/매.png"},
-            "ESFJ":{"animal":"노랑부리저어새","explain":"사교에서 나를 따라올 자는 없다! 사회적 활동에 강한 나는 천연기념물 205-2호 노랑부리저어새<br><li>나는 이야기 하는 걸 좋아하는 새에요. 주위새들과 함께 하는 게 좋습니다.나를 만나러 와줘요. 내가 이야기를 들어줄게요.</li><br><li>나는 상처를 잘 받지만 회복도 빨라요. 하지만 상처를 받지 않는게 아니니 살살 말해주길 바라요.</li><br><li>외로움을 많이 타는 편이에요. 나에겐 과거의 기억이 소중해요. 추억을 곱씹는 시간이 많아요.</li>","img":"img/노랑부리저어새.png"},
-            "ENFJ":{"animal":"큰고니","explain":"새 구역 핵인싸는 바로 나! 단순하고 직관적이고 객관적인 나는 천연기념물 제201-2호 큰고니!<br><li>나는 새 친구들을 챙겨주고 도움을 줄 때, 행복을 느껴요.</li><br><li>다른 새들이 배신을 하면 그럴 수도 있지,라고 생각하며 혼자 속상해해요.</li><br><li>부드러워 보여도 화나면 무서우니 조심해주세요.</li><br><li>나는 새 무리간 충돌에서 해결사가 되려는 노력을 많이 해요.공감능력이 높아서 다른 새들이 하소연을 많이 해요.</li><br><li>나는 다른 새들에게 관심이 정말 많고 도덕적인 새랍니다.</li>","img":"img/큰고니.png"},
-            "ENTJ":{"animal":"검독수리","explain":"강력한 지도력! 냉정한 판단력을 가진 나는 천연기념물 243-2호 검독수리!<br><li>그 일 내가 할게요. 내가 해결책을 찾을 수 있어요.</li><br><li>나는 다른 새에게 피해주는 것이 싫은 새에요. 물론 받는 것도 싫어요.</li><br><li>나는 내가 굉장히 좋습니다.나에겐 저 먹이를 잡을 계획이 있어요! 나 혼자 잡을 수 있을 겁니다.</li><br><li>수단과 방법을 가리지 않아요.</li><br><li>도전정신이 강한 편이에요! 일단 해봅시다. 일에 대한 책임은 제가 질게요.</li><br><li>나는 너무 뛰어난 새! 하지만 그만큼 다른 새들은 나한테 고집스럽다고 말하기도 해요.</li>","img":"img/검독수리.png"}
+            "ISTJ":{"animal":"큰기러기","explain":"질서정연한 삶을 즐기는 나는야 멸종위기 야생생물 2급인 큰 기러기!야생에서 살아남기 위해 항상 현실적이면서 진지한 태도는 필수!<br><br><li>치밀하고 꼼꼼한 성격으로 규칙적인 삶을 즐긴답니다.</li><br><li>생각보다 보수적이에요!</li><br><li>틀에 짜여진 업무와 사회안에서 성실하게 임할 각오가 되어있답니다~!</li><br><li>조용하고 성실한 것은 나의 무기!그러다보니 이 원칙주의 성격은 다른 새들한테 융통성이 없다는 소리를 가끔씩은 들어요.</li><br><li>계획적인 나는 일을 할땐 다소 냉철한 면이 있답니다. 조용하지만 일할땐 강해요.</li>","img":"img/큰기러기.png"},
+            "ISFJ":{"animal":"따오기","explain":"사랑스럽고 매너가 넘치는 나는 천연기념물 198호 따오기.정적인 생활을 사랑하는 새에요.<br><br><li>나는 내일의 계획, 둥지의 계획, 알의 계획도 가지고 있어요.</li><br><li>가능하면 이대로 삶이 흘러줬음 좋겠어요.평화로운 생활이 좋거든요.</li><br><li>따뜻한 말을 해주세요. 나는 칭찬을 좋아한답니다.</li><br><li>어려운 일이 있으면 얘기해주세요. 내가 도울수 있는 일이 있다면 돕고 싶어요.</li><br><li>온화하고 성실해요. 새들의 무리에 협조를 잘하는 편입니다.</li>","img":"img/따오기.png"},
+            "INFJ":{"animal":"긴꼬리딱새","explain":"다른 새에게 피해주는 것도 받는 것도 싫은, 알고 보면 매력 덩어리, 나는야 멸종위기 2급의 긴꼬리딱새!<br><br><li>독립심이 강한 마이버드웨이 입니다. 밖에서 친구들이랑 비행하는거도 좋지만 나무 위에서 혼자 있는게 더 좋아요.</li><br><li>나는 좋고 싫음이 명확해서 친한 새들과만 놀아요. 나를 싫어하는 새들은 아웃 오브 안중으로 관심 없어요.</li><br><li>틀에 박힌 먹이 사냥이나 비행은 지루해요.</li><br><li>대장 새가 이래라 저래라 지시하는게 마음에 안들어요.외적으로 화려하고 나와 대화가 잘 통하는 새는 연락주세요.</li>","img":"img/긴꼬리딱새.png"},
+            "INTJ":{"animal":"뿔종다리","explain":"아는 것이 많고 창의적인 나는 멸종위기 야생생물 2급 뿔종다리!<br><br><li>나는 이성적인 새에요. 감정에 휘둘리지 않죠.</li><br><li>주위의 상황을 잘 볼 줄 알아요. 먹이의 기회가 온다면 놓치치 않아요.</li><br><li>나에게 다가오려면 오랜 시간을 투자하는 것을 권해요.</li><br><li>한 번 한다하면 무조건 합니다.난관을 도전적으로 받아드려요!</li><br><li>나의 일에 열정적인 편입니다.</li>","img":"img/뿔종다리.png"},
+            "ISTP":{"animal":"쇠검은머리쑥새","explain":"사색하는 시간은 나의 엔돌핀! 혼자 생각하는 시간을 좋아하는 나는야 멸종위기 야생생물 2급인 쇠검은 머리 쑥새!<br><br><li>혼자서도 사냥 문제 없어요! 독립적이지만 모험적이라 혼자서도 모든일을 척척박사처럼 할 수 있어요!</li><br><li>비행 중 응급상황이 발생해도 당황하지 않아요! 객관적이고 신중한 나는 위기 상황에서도 침착하게 일을 해결한답니다!</li><br><li>같은 곳에 오래 머무르는 건 내취향이 아니에요! 이 세상은 어디든 가보고 싶어요!</li><br><li>반복되는 하루하루는 지겨우니 계속해서 새로운 곳을 시도하는 스타일이에요.</li>","img":"img/쇠검은머리쑥새.png"},
+            "ISFP":{"animal":"흰목물떼새","explain":"그냥 귀찮고, 노는건 좋지만 금방 지치는, 나는야 배려형 개인주의 멸종위기2급 흰목물떼새!<br><br><li>나는 나무늘보같은 새입니다. 사냥, 비행, 무리 생활 등 모든 새LIFE가 귀찮아요.</li><br><li>누구보다 우리의 보금자리를 잘 지킬수 있어요. 둥지순이거든요. 친구 새랑 비행 약속이 취소되면 너무 행복해요.</li><br><li>나는 다른 새들의 관심이 정말 싫지만 좋아요. 조용한 관종이에요.</li><br><li>다들 날 순두부 같이 연한 새로 생각들하는데 생각보다 영리하답니다.</li><br><li>이도저도 포기 못하는 모순적인 새랍니다.</li>","img":"img/흰목물떼새.png"},
+            "INFP":{"animal":"넓적부리도요","explain":"아무생각 없어 보여도 수많은 망상 중, 나는야 멸종위기 1급 넓적 부리도요!<br><br><li>나는 이상주의적인 새에요!</li><br><li>제가 가만히 서서 움직이지 않을 때는 잡생각 중이랍니다.</li><br><li>사실 새 무리에서 엄청난 관종이지만 막상 관심을 받으면 쑥쓰러워요.</li><br><li>게으른 완벽주의자여서 실패할 먹이사냥은 시작도 하지 않아요.그래서 먹이는 한번에 몰아서 벼락치기로 잡아요.</li><br><li>나랑 친해지려면 이기적인 마음을 버려주세요.</li><br><li>불의를 보면 참지 못하지만, 귀찮아서 참고 살아요.</li>","img":"img/넓적부리도요.png"},
+            "INTP":{"animal":"까막딱따구리","explain":"붉은 머리는 나의 트레이드 마크! 똑똑이를 담당하고 있는 나는야 천연기념물 제242호 까막 딱따구리!<br><br><li>먹이를 구할 때도 그냥 구하지 않아요, 명석한 나의 두뇌로 항상 논리적이고 분석적으로 해결한답니다.</li><br><li>고독함 자체는 나의 즐거움, 깊은 사색은 나에게 쉼터가 되기도 한답니다.</li><br><li>명석한 두뇌로 위기 상황을 창의적이게 해결해요. 물론 새로운 상황에도 빠르게 잘 적응한답니다.</li><br><li>어떤 것을 선택할 때 시간이 좀 걸리는 스타일이에요. 변덕쟁이라 언제 내 마음이 바뀔지 모르거든요~</li><br><li>똑똑한 나의 두뇌를 믿다 가끔 실수를 하기도 해요.</li><br><li>생각한 것을 실행으로 옮기기는 조금은....귀찮아요.</li><br><li>나보다 덜 똑똑한 이들은 답답해요! 그런 새들이 나한테 뭘 시킨다면 난 그자리에서 도망칠지도 몰라요!</li><br><li>아마 나의 피앙새는 가장 똑똑한 새일거에요. 존경할 만한 포인트가 있는 걸 좋아하거든요.</li>","img":"img/까막딱따구리.png"},
+            "ESTP":{"animal":"개리","explain":"수십마리의 떼를 이끄는 특유의 리더쉽이 있는 당신은 천연기념물 제 325호, 개리!<br><br><li>나는 모험을 항상 즐기는 편이에요. 왕성한 활동을 하는 것을 너무 좋아합니다.</li><br><li>습지는 나의 필드! 관찰력이 좋은 나는 강한 현실감각으로 먹이를 구한답니다.</li><br><li>개리들에겐 지루함이란 없어요! 새로운 것을 찾는 것 자체가 나에게는 커다란 기쁨!</li><br><li>성취 욕구와 승부 욕구를 뺀 개리는 개리라고 할 수가 없어요~!</li><br><li>규칙은 싫어! 나의 길은 내가 만들어요. 하늘의 길도 진두지휘하는 개리랍니다.</li><br><li>가끔은 지나치게 즉흥적인 행동에 의존하는 성향이 있어요. 오늘 할일을 내일 미루는 것도 나의 특성이에요.</li>","img":"img/개리.png"},
+            "ESFP":{"animal":"팔색조","explain":"멀리 나는 나를 보면 불러줘! 정이 많은 나는 천연기념물 204호 팔색조.<br><br><li>나는 화려한 걸 좋아해요! 여러분들이 좋아요.</li><br><li>다가올 땐 날개를 흔들어요! 나는 인싸중에 인싸이자 분위기 메이커! 긍적정인 기운이 강해요.</li><br><li>빨리 빨리 움직이는 것을 좋아해요! 일찍 일어나는 새가 먹이를 잡기 마련이거든!</li><br><li>오늘 먹을 걱정만 해요. 내일은 내일의 내가 할거야~~</li>","img":"img/팔색조.png"},
+            "ENFP":{"animal":"섬개개비","explain":"항상 밝은 미소와 높은 텐션, 다른 새들과 어울리기는 무척이나 좋아하는, 나는야 멸종위기 2급의 섬개개비!<br><br><li>나는 다른 새들의 연애에 관심이 많아요. 새 무리의 분위기 메이커입니다.</li><br><li>나는 하이텐션이지만 감정기복이 심해서 갑자기 우울해지기도 해요.</li><br><li>사교성이 좋아서 처음보는 새 무리들과 금방 친해져요.</li><br><li>다른 새가 무례한 행동을 하면 표정관리가 잘 안돼요.</li><br><li>긍정적이고 낙천적이지만 인내심은 부족해요.<li>","img":"img/섬개개비.png"},
+            "ENTP":{"animal":"수리부엉이","explain":"무소음 비행부터 타고난 시야까지! 다재다능한 나는야 수리부엉이!<br><br><li>타고난 활발함으로 자유분방하면서 개방적인 성격이에요.</li><br><li>뿜어져 나오는 카리스마, 나도 감당 못하겠어요~~</li><br><li>다른 새들은 날 '수리 에디슨'이라 불러요. 그 만큼 다방면에서 똑똑하고, 새로운 계획을 만듣는 것을 좋아하는 발명가랍니다.</li><br><li>말로는 절대 지지 않아요! 타인의 잔소리는 나에겐 그저 눈엣가시일 뿐이랍니다.</li><br><li>밤에는 이 세상이 나의 것! 나에 대한 프라이드가 굉장히 강하고 내 자신에 대한 확신이 넘쳐 흘러요.</li><br><li>외로운 건 절대 싫어! 혼자서 있는 걸 싫어하는 스타일이에요. 다른 새들과 상호작용하며 에너지를 채우는 스타일 이랍니다!</li>","img":"img/수리부엉이.png"},
+            "ESTJ":{"animal":"매","explain":"카리스마를 가진 체계적 지도자 나는야 천연기념물 323-7호, 매!<br><br><li>나는 타고난 지도자 스타일!  일을 조직하는데 큰 재미를 느껴요.</li><br><li>지극히 현실주의적인 스타일이에요. 구체적이고 생산적인 일에 흥미를 느끼고 논리적인 걸 좋아합니다! 일 처리 잘 못하는 걸 못참아해요!</li><br><li>나는 타고난 리더라서 합리적인 선택을 만들어 내는데 도가 텄죠!</li><br><li>한번 뱉은 말은 꼭 지키는 스타일! 말과 행동한 것에 책임을 지는 스타일이에요.</li><br><li>나는야 항상 사냥중! 여유로운 것이 오히려 불안해요. 항상 상황판단 중이에요 그만큼 계산적이죠.</li><br><li>목적지로 비행중엔 다른건 안보여요! 마음을 한번 먹으면 더욱 더 냉정해지는 스타일이에요. 목표 이루기가 1순위로 바뀐답니다.</li><br><li>완벽주의 성격도 나의 목표 이루기에 큰 도움이 된답니다. 하지만 가끔 주변에서 서운해하는 경우도 존재해요.</li>","img":"img/매.png"},
+            "ESFJ":{"animal":"노랑부리저어새","explain":"사교에서 나를 따라올 자는 없다! 사회적 활동에 강한 나는 천연기념물 205-2호 노랑부리저어새<br><br><li>나는 이야기 하는 걸 좋아하는 새에요. 주위새들과 함께 하는 게 좋습니다.나를 만나러 와줘요. 내가 이야기를 들어줄게요.</li><br><li>나는 상처를 잘 받지만 회복도 빨라요. 하지만 상처를 받지 않는게 아니니 살살 말해주길 바라요.</li><br><li>외로움을 많이 타는 편이에요. 나에겐 과거의 기억이 소중해요. 추억을 곱씹는 시간이 많아요.</li>","img":"img/노랑부리저어새.png"},
+            "ENFJ":{"animal":"큰고니","explain":"새 구역 핵인싸는 바로 나! 단순하고 직관적이고 객관적인 나는 천연기념물 제201-2호 큰고니!<br><br><li>나는 새 친구들을 챙겨주고 도움을 줄 때, 행복을 느껴요.</li><br><li>다른 새들이 배신을 하면 그럴 수도 있지,라고 생각하며 혼자 속상해해요.</li><br><li>부드러워 보여도 화나면 무서우니 조심해주세요.</li><br><li>나는 새 무리간 충돌에서 해결사가 되려는 노력을 많이 해요.공감능력이 높아서 다른 새들이 하소연을 많이 해요.</li><br><li>나는 다른 새들에게 관심이 정말 많고 도덕적인 새랍니다.</li>","img":"img/큰고니.png"},
+            "ENTJ":{"animal":"검독수리","explain":"강력한 지도력! 냉정한 판단력을 가진 나는 천연기념물 243-2호 검독수리!<br><br><li>그 일 내가 할게요. 내가 해결책을 찾을 수 있어요.</li><br><li>나는 다른 새에게 피해주는 것이 싫은 새에요. 물론 받는 것도 싫어요.</li><br><li>나는 내가 굉장히 좋습니다.나에겐 저 먹이를 잡을 계획이 있어요! 나 혼자 잡을 수 있을 겁니다.</li><br><li>수단과 방법을 가리지 않아요.</li><br><li>도전정신이 강한 편이에요! 일단 해봅시다. 일에 대한 책임은 제가 질게요.</li><br><li>나는 너무 뛰어난 새! 하지만 그만큼 다른 새들은 나한테 고집스럽다고 말하기도 해요.</li>","img":"img/검독수리.png"}
+        
         }
         function start() {
             $(".start").hide();
             $(".question").show();
             next();
-            document.body.style.background = "url('img/img1.gif') no-repeat 0 0";
+            
         }
         $("#A").click(function(){
            var type=($("#type").val());
@@ -182,7 +170,9 @@
                 $("#img").attr("src",result[mbti]["img"]);
                 $("#animal").html(result[mbti]["animal"]);
                 $("#explain").html(result[mbti]["explain"]);
-                document.body.style.background = "url('img/img13.gif') no-repeat 0 0";
+            
+                
+            
             } else{ 
                     $(".progress-bar").attr('style','width:calc(100/12*'+num+'%)');
                     $("#title").html(q[num]["title"]);
@@ -193,15 +183,56 @@
             }          
         };
 
-        
-     
+  function bgchange(){
+
+  var background_img = "/img/배경/Media_"; 
+
+  var number = Math.floor(Math.random() * 13)+1 ;
+
+  var container = document.getElementById("container");
 
 
-    
-        
-      
+
+  background_img += number + ".gif";
+
+  container.style.backgroundImage = "url('" + background_img + "')";
+
+  }
+  
+  
 </script>
     </script>
+</script>
+    </script>
+
+    <style type="text/css"> 
+
+      #container{background-image:url("/img/배경/Media_0.gif");}
+    
+    </style>
+
+
+
+    <!-- KakaoTalk Share Script -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.min/js"></script>
+    <!-- Kakao talk script-->
+    <script type="text/javascript">
+        Kakao.init('5e758dd8876482ffabe379e630d7a7e8'); // 초기화
+        function sendLink() { // 카카오톡 공유하기
+          Kakao.Link.sendDefault({
+            objectType: 'text',
+            text: '기본 템플릿으로 제공되는 텍스트 템플릿은 텍스트를 최대 200자까지 표시할 수 있습니다. 텍스트 템플릿은 텍스트 영역과 하나의 기본 버튼을 가집니다. 임의의 버튼을 설정할 수도 있습니다. 여러 장의 이미지, 프로필 정보 등 보다 확장된 형태의 카카오링크는 다른 템플릿을 이용해 보낼 수 있습니다.',
+            link: {
+              mobileWebUrl: 'https://developers.kakao.com/docs/js/kakaotalklink#텍스트-템플릿-보내기',
+              webUrl: 'https://developers.kakao.com/docs/js/kakaotalklink#텍스트-템플릿-보내기',
+            },
+          })
+        }
+    </script>
+  <!-- instagram shere script-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
 
     <!--코드 저작권
         Copyright (c) 2020 by Likelion (https://www.codelion.net/)
@@ -216,30 +247,24 @@
           
        </div>
        <p class="footer-comment">
-         <a href="https://www.instagram.com/orsae7">
-            <img class="insta" src="img/인스타그램1.png" alt="instagram">
-         </a>
+        <div class="links">
+          <a class="instagram" href="https://www.instagram.com/orsae7" target="_blank">
+          INSTAGRAM</a>
+        </div>
            </p>
-   </footer>
+      </footer>
+      
 </body>
 </html>
 
 <!-- 패치할 것 
 1. 페이지 넘어갈때 트랜지션
-2. 팀명하고 문구 헤더 ->오르새로 변경!(5.20 hyunco)
-3. footer 작업 (인스타그램 계정) -> (5/27 넣음!)
-4. 텍스트 부분 정리하기 (문단 나누기)->리스트로 수정. 다만 결과 설명 부분만 왼쪽 정렬로 하려고 하는데 
-<div style="text-align:justify"> 요 코드를 붙여 넣으면 처음부터 실행이 안된다 .. 두둥.. (5.20 hyunco)
-5. 상민님 배경 디자인 탑재
-6. updown slash 이미지 색상 재배치 혹은 재구축 <- 문제 화면은 새 이미지로 변경 시작이랑 끝은 boder나 새로운 슬래쉬로 바꿀듯
-7. 배경 디자인 따라서 전반적인 색상 리디자인
-8. 결과 부분 캐릭터 디자인들 반영->(5/27 hyunco)
-9. 질문 다 마치고 결과 알림창으로 뜨면서 스포되는 부분 삭제.. 바로 결과창으로 넘어가게->alert 코드 삭제(5.22 hyunco)
-10. 결과 페이지에 텀블벅 펀딩 소개 부분도 추가하면 좋을듯..! 공유하기 아래부분에 
+2. 팀명하고 문구 footer에 넣을것들이랑 header
+3. footer 작업 (인스타그램 계정) (펀딩 사이트)
+4. 텍스트 부분 정리하기 (양쪽 정렬로 바꾸고 싶은데 고민중)
+5. 배경 디자인 따라서 전반적인 색상 리디자인 -->
 
-수정한 것 (5.25 hyunco)
-1.시작-문제-결과에 반투명 배경색 입힘
-2.progressbar와 botton 색 조정
-3.초록색 계열로 텍스트 색 입힘!
-4.캐릭터 올림-->
+<!-- 고친것
+1. footer에 인스타 링크 입력-->
+
 
